@@ -6,10 +6,10 @@ var oneStepClick = (function(){
 		$(obj).click(function(event){
 			if(!bclicked){
 				bclicked = true;
-				cal.bind(_this)();
+				if(cal)cal.bind(_this)();
 			}else{
 				event.stopImmediatePropagation();
-				notcal();
+				if(notcal)notcal();
 			}
 		})
 	}
